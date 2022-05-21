@@ -84,7 +84,8 @@ else
   BOOST_PACKAGE_BASENAME=boost_${BOOST_VERSION//./_}
 
   log "Retrieving boost."
-  wget "https://dl.bintray.com/boostorg/release/${BOOST_VERSION}/source/${BOOST_PACKAGE_BASENAME}.tar.gz"
+  wget "https://boostorg.jfrog.io/artifactory/main/release/${BOOST_VERSION}/source/${BOOST_PACKAGE_BASENAME}.tar.gz" || true
+#  wget "https://dl.bintray.com/boostorg/release/${BOOST_VERSION}/source/${BOOST_PACKAGE_BASENAME}.tar.gz"
 
   log "Extracting boost for Python 2."
   tar -xzf ${BOOST_PACKAGE_BASENAME}.tar.gz
